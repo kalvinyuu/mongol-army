@@ -3,11 +3,13 @@
  * @see https://v0.dev/t/BVynGgWpKhS
  * Documentation: https://v0.dev/docs#integrating-generated-code-into-your-nextjs-app
  */
+'use client'
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import Image from 'next/image'
+import { motion } from "framer-motion"
 
 interface IconProps {
   className?: string;
@@ -65,7 +67,7 @@ export default function Home() {
         </section>
         <section className="py-24 bg-[#ffd90f]" id="about">
           <div className="container mx-auto px-4">
-            <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
+             <div className="flex flex-col gap-8">
               <div>
                 <h2 className="text-3xl font-bold tracking-tight text-gray-950">About MemeShiba</h2>
                 <p className="mt-4 text-gray-950">
@@ -78,6 +80,34 @@ export default function Home() {
                   become the go-to meme coin for the next generation of crypto enthusiasts.
                 </p>
               </div>
+	      <div className="relative aspect-square flex justify-center  items-center h-min">
+	      <Image
+		  src="/noMus.svg"
+		  alt="genghis face"
+		  height={350}
+		  width={350}>
+	      </Image>
+	      <motion.div className="absolute z-10"
+			  style={{ transform: 'translate(-60%, 97%)' }}
+	      >
+		  <Image
+		      src="/Lmus.svg"
+		      alt="left mustache"
+		      height={100}
+		      width={100}>
+		  </Image>
+	      </motion.div>
+	      <motion.div className="absolute z-10"
+			  style={{ transform: 'translate(60%, 97%)' }}
+	      >
+		  <Image
+		      src="/Rmus.svg"
+		  alt="right mustache"
+		  height={100}
+		  width={100}>
+		  </Image>
+	      </motion.div>
+	      </div>
               <div>
                 <h2 className="text-3xl font-bold tracking-tight text-gray-950">Key Features</h2>
                 <ul className="mt-4 space-y-4 text-gray-950">
@@ -102,7 +132,7 @@ export default function Home() {
             </div>
           </div>
         </section>
-        <section className="py-24 bg-[#ffd90f]" id="roadmap">
+        <section className="py-24 bg-[#ffd90f] aspect-video" id="roadmap">
           <div className="container mx-auto px-4">
             <h2 className="text-3xl font-bold tracking-tight text-center text-gray-950">Roadmap</h2>
             <div className="mt-8 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
@@ -160,7 +190,7 @@ export default function Home() {
             </div>
           </div>
         </section>
-        <section className="py-24 bg-[#ffd90f]" id="contact">
+        <section className="py-24 bg-[#ffd90f] aspect-video" id="contact">
           <div className="container mx-auto px-4">
             <h2 className="text-3xl font-bold tracking-tight text-center text-gray-950">Get in Touch</h2>
             <div className="mt-8 grid grid-cols-1 gap-8 md:grid-cols-2">
