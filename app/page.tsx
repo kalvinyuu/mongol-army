@@ -9,7 +9,7 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import Image from 'next/image'
-import { motion } from "framer-motion"
+import { motion } from "framer-motion";
 
 interface IconProps {
   className?: string;
@@ -18,6 +18,8 @@ interface IconProps {
 }
 
 export default function Home() {
+
+
   return (
     <div key="1" className="bg-[#ffd90f] text-gray-950">
       <header className="fixed top-0 z-50 w-full border-b border-gray-950 bg-gray-950 py-4">
@@ -65,73 +67,86 @@ export default function Home() {
             </div>
           </div>
         </section>
-        <section className="py-24 bg-[#ffd90f]" id="about">
-          <div className="container mx-auto px-4">
-             <div className="flex flex-col gap-8">
-              <div>
-                <h2 className="text-3xl font-bold tracking-tight text-gray-950">About MemeShiba</h2>
-                <p className="mt-4 text-gray-950">
-                  MemeShiba is a decentralized cryptocurrency that was created as a tribute to the popular Doge meme.
-                  Our mission is to bring the dankest memes to the blockchain and provide a fun and engaging investment
-                  opportunity for our community.
-                </p>
-                <p className="mt-4 text-gray-950">
-                  With a strong focus on community engagement and meme-inspired development, MemeShiba is poised to
-                  become the go-to meme coin for the next generation of crypto enthusiasts.
-                </p>
-              </div>
-	      <div className="relative aspect-square flex justify-center  items-center h-min">
-	      <Image
-		  src="/noMus.svg"
-		  alt="genghis face"
-		  height={350}
-		  width={350}>
-	      </Image>
-	      <motion.div className="absolute z-10"
-			  style={{ transform: 'translate(-60%, 97%)' }}
-	      >
-		  <Image
-		      src="/Lmus.svg"
-		      alt="left mustache"
-		      height={100}
-		      width={100}>
-		  </Image>
-	      </motion.div>
-	      <motion.div className="absolute z-10"
-			  style={{ transform: 'translate(60%, 97%)' }}
-	      >
-		  <Image
-		      src="/Rmus.svg"
-		  alt="right mustache"
-		  height={100}
-		  width={100}>
-		  </Image>
-	      </motion.div>
-	      </div>
-              <div>
-                <h2 className="text-3xl font-bold tracking-tight text-gray-950">Key Features</h2>
-                <ul className="mt-4 space-y-4 text-gray-950">
-                  <li>
-                    <RocketIcon className="mr-2 inline-block h-6 w-6 text-gray-950" />
-                    Deflationary tokenomics to drive price appreciation
-                  </li>
-                  <li>
-                    <WalletIcon className="mr-2 inline-block h-6 w-6 text-gray-950" />
-                    Secure and decentralized blockchain infrastructure
-                  </li>
-                  <li>
-                    <TrendingUpIcon className="mr-2 inline-block h-6 w-6 text-gray-950" />
-                    Exciting roadmap with new features and partnerships
-                  </li>
-                  <li>
-                    <UsersIcon className="mr-2 inline-block h-6 w-6 text-gray-950" />
-                    Vibrant and engaged community of meme enthusiasts
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </section>
+<section className="py-24 bg-[#ffd90f] w-screen" id="about">
+  <div className="container mx-auto px-4">
+    <div className="flex flex-col gap-8">
+      <div>
+        <h2 className="text-3xl font-bold tracking-tight text-gray-950">About MemeShiba</h2>
+        <p className="mt-4 text-gray-950">
+          MemeShiba is a decentralized cryptocurrency that was created as a tribute to the popular Doge meme.
+          Our mission is to bring the dankest memes to the blockchain and provide a fun and engaging investment
+          opportunity for our community.
+        </p>
+        <p className="mt-4 text-gray-950">
+          With a strong focus on community engagement and meme-inspired development, MemeShiba is poised to
+          become the go-to meme coin for the next generation of crypto enthusiasts.
+        </p>
+      </div>
+      <div className="relative aspect-square flex justify-center items-center h-min">
+        <motion.div
+          transition={{ duration: 10, repeat: Infinity, repeatType: "reverse" }}
+          animate={{ y: -75 }}
+          className="relative"
+        >
+          <Image
+            src="/noMus.svg"
+            alt="genghis face"
+            height={350}
+            width={350}
+            className="block mx-auto"
+          />
+        </motion.div>
+        <motion.div
+          className="absolute"
+          style={{ top: 'calc(57% - 8px)', left: 'calc(50% - 105px)' }}
+          transition={{ duration: 10, repeat: Infinity, repeatType: "reverse" }}
+          animate={{ rotate: [0, 16], y: -75 }}
+        >
+          <Image
+            src="/Lmus.svg"
+            alt="left mustache"
+            height={100}
+            width={100}
+          />
+        </motion.div>
+        <motion.div
+          className="absolute"
+          style={{ top: 'calc(57% - 8px)', left: 'calc(50% + 5px)' }}
+          transition={{ duration: 10, repeat: Infinity, repeatType: "reverse" }}
+          animate={{ rotate: [0, -16], y: -75 }}
+        >
+          <Image
+            src="/Rmus.svg"
+            alt="right mustache"
+            height={100}
+            width={100}
+          />
+        </motion.div>
+      </div>
+      <div>
+        <h2 className="text-3xl font-bold tracking-tight text-gray-950">Key Features</h2>
+        <ul className="mt-4 space-y-4 text-gray-950">
+          <li>
+            <RocketIcon className="mr-2 inline-block h-6 w-6 text-gray-950" />
+            Deflationary tokenomics to drive price appreciation
+          </li>
+          <li>
+            <WalletIcon className="mr-2 inline-block h-6 w-6 text-gray-950" />
+            Secure and decentralized blockchain infrastructure
+          </li>
+          <li>
+            <TrendingUpIcon className="mr-2 inline-block h-6 w-6 text-gray-950" />
+            Exciting roadmap with new features and partnerships
+          </li>
+          <li>
+            <UsersIcon className="mr-2 inline-block h-6 w-6 text-gray-950" />
+            Vibrant and engaged community of meme enthusiasts
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
         <section className="py-24 bg-[#ffd90f] aspect-video" id="roadmap">
           <div className="container mx-auto px-4">
             <h2 className="text-3xl font-bold tracking-tight text-center text-gray-950">Roadmap</h2>
